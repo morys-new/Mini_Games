@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>METAL WARFARE</title>
+<style>
+  :root { --neon: #ffe14d; --neon2: #ff5252; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: radial-gradient(circle at 50% 0%, #2a1f3a 0%, #0b0810 70%), #0b0810;
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-family: 'Courier New', monospace; color: #e8e0c8; overflow: hidden;
+  }
+  body::after {
+    content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 50;
+    background: repeating-linear-gradient(
+      to bottom, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 2px,
+      rgba(0,0,0,0.18) 3px, rgba(0,0,0,0.18) 4px);
+  }
+  .title {
+    font-size: clamp(28px,6vw,56px); font-weight: 900; letter-spacing: 6px; margin-bottom: 14px;
+    color: var(--neon);
+    text-shadow: 0 0 6px var(--neon2), 3px 3px 0 #b71c1c, 6px 6px 0 #000;
+    transform: skewX(-6deg);
+  }
+  .cabinet {
+    position: relative; padding: 18px; border-radius: 14px;
+    background: linear-gradient(145deg, #2b2620, #100d09);
+    box-shadow:
+      0 0 0 4px #3a322a, 0 0 0 8px #0a0806,
+      0 24px 60px rgba(0,0,0,0.8), inset 0 0 40px rgba(0,0,0,0.6);
+  }
+  .cabinet::before {
+    content: 'INSERT COIN'; position: absolute; top: -2px; right: 18px;
+    font-size: 11px; letter-spacing: 3px; color: var(--neon2);
+    animation: blink 1s steps(2) infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+  canvas {
+    display: block; width: 960px; height: 540px; max-width: 92vw;
+    image-rendering: pixelated; border-radius: 6px; border: 3px solid #000;
+    box-shadow: inset 0 0 60px rgba(0,0,0,0.55); background: #000;
+  }
+  .controls {
+    display: flex; gap: 26px; flex-wrap: wrap; justify-content: center;
+    margin-top: 16px; font-size: 13px; letter-spacing: 1px; color: #b8ad90;
+  }
+  .controls b { color: var(--neon); }
+  kbd {
+    background: #2b2620; border: 1px solid #4a4035; border-bottom-width: 3px;
+    border-radius: 4px; padding: 1px 7px; color: #fff; font-size: 12px;
+  }
+</style>
+</head>
+<body>
+  <div class="title">METAL&nbsp;WARFARE</div>
+  <div class="cabinet">
+    <canvas id="game" width="960" height="540"></canvas>
+  </div>
+  <div class="controls">
+    <span><b>GERAK</b> <kbd>A</kbd><kbd>D</kbd> / <kbd>←</kbd><kbd>→</kbd></span>
+    <span><b>LOMPAT</b> <kbd>W</kbd> / <kbd>Space</kbd></span>
+    <span><b>TEMBAK</b> <kbd>K</kbd> / <kbd>J</kbd> / <kbd>X</kbd></span>
+    <span><b>LANJUT/ULANG</b> <kbd>R</kbd> / <kbd>Enter</kbd></span>
+  </div>
+  <script src="dist/game.js"></script>
+</body>
+</html>
