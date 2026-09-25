@@ -1,7 +1,7 @@
 {
   "name": "metal-warfare",
   "version": "2.0.0",
-  "description": "Metal Warfare — 5 Level Run-and-Gun Sidescroller",
+  "description": "Metal Warfare: 5-Level Run-and-Gun Sidescroller",
   "scripts": {
     "build": "tsc",
     "watch": "tsc --watch",

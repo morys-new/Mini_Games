@@ -68,7 +68,7 @@ const LEVEL_DEFS: LevelDef[] = [
   },
   {
     name: "BUNKER BAWAH TANAH",
-    subtitle: "Gelap dan sempit — pasukan elite menghadangmu.",
+    subtitle: "Gelap dan sempit, pasukan elite menghadangmu.",
     width: 5600,
     sky: ['#0a0a14', '#141428', '#1a1a38'],
     groundColor: '#2a2a2a', groundTop: '#3a3a3a',
@@ -539,7 +539,7 @@ class Game {
     ctx.fillStyle = 'rgba(0,30,60,0.5)'; ctx.fillRect(0, 0, W, H);
     ctx.textAlign = 'center';
     ctx.fillStyle = '#ffe14d'; ctx.font = 'bold 20px monospace';
-    ctx.fillText(`— LEVEL ${this.currentLevel + 1} —`, W / 2, H / 2 - 90);
+    ctx.fillText(`LEVEL ${this.currentLevel + 1}`, W / 2, H / 2 - 90);
     ctx.fillStyle = '#ff5252'; ctx.font = 'bold 52px monospace'; ctx.fillText(def.name, W / 2, H / 2 - 30);
     ctx.fillStyle = '#ccc'; ctx.font = '18px monospace'; ctx.fillText(def.subtitle, W / 2, H / 2 + 20);
     ctx.fillStyle = 'rgba(255,225,77,0.8)'; ctx.font = '16px monospace';
